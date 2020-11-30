@@ -57,15 +57,15 @@
         }
       };
 
-      for (const key in product) {
+      for (const key in product) {                      /* we declare a const 'key' and then use 'in' to loop through the product object. Each iteration returns a key which we can refer to within the for loop by using that const 'key' */
         console.log("'" + key + "'=" + product[key]);
       }
     }
 
     // Using a for/of loop
     function forofSample() {
-      for (const item of _products) {
-        console.log(JSON.stringify(item));
+      for (const item of _products) {                 /* similar to above, we declare a const 'item' and then use 'of' to loop through our arr '_products'. Each iteration returns a product object. */
+        console.log(JSON.stringify(item));            /* we use the const we defined above 'item' to refer to each product object. JSON.stringify allows us to return each object as a string in the browser */
       }
     }
 
@@ -74,7 +74,7 @@
       let productName = "HL Road Frame - Black, 58";
       let letters = "";
 
-      for (const char of productName) {
+      for (const char of productName) {               /* same as the for/of example above, but looping over a string instead */
         letters += char;
       }
       console.log(letters);
@@ -84,7 +84,7 @@
     function breakSample() {
       for (const item of _products) {
         if (item.standardCost < 20) {
-          break;
+          break;                                    /* using 'break' to end the loop once we arrive at a product with a standardcost < 20. */
         }
         console.log(JSON.stringify(item));
       }
@@ -94,7 +94,7 @@
     function continueSample() {
       for (const item of _products) {
         if (item.standardCost > 1000) {
-          continue;
+          continue;                                 /* using 'continue' to end the loop when we arrive at a product that doesn't have standardcost > 1000. */
         }
         console.log(JSON.stringify(item));
       }
@@ -103,7 +103,7 @@
     // Use of a label.
     // NOTE: I don't recommend use of labels as this leads to spaghetti code
     function labelSample() {
-      even:
+      even:                                             /* this is the label... basically never necessary */
       for (let index = 1; index <= 10; index++) {
         if (index % 2 == 1) {
           continue even;
@@ -115,3 +115,16 @@
 </body>
 
 </html>
+
+
+<!-- 
+  FOR/IN STATEMENTS:
+  -Iterate over the the elements of an object (key-val pairs of property-method) and return the key
+  -You can then do object[key] to get the value of that key-val pair.
+  FOR/OF STATEMENTS:
+  -Iterate over any iterable object (arr, str, etc.) and return an object on each iteration.
+  BREAK STATEMENTS:
+  -Leave a loop early (just like when used in switch statements).
+  CONTINUE STATEMENTS:
+  -Forces the loop to continue to the next iteration.
+ -->
