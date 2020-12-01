@@ -45,36 +45,36 @@
       console.log("price % 3 = " + result.toString());
 
       // Increment
-      result = price++;
-      console.log("result = price++ = " + result.toString());
-      console.log("price = " + price.toString());
+      result = price++;                                               
+      console.log("result = price++ = " + result.toString());           
+      console.log("price = " + price.toString());                       
       result = ++price;
-      console.log("result = ++price = " + result.toString());
-
-      // Decrement
-      result = price--;
-      console.log("result = price-- = " + result.toString());
-      console.log("price = " + price.toString());
-      result = --price;
-      console.log("result = --price = " + result.toString());
+      console.log("result = ++price = " + result.toString());           
+                                                                        /* BASICALLY: if the increment or decrement comes AFTER the var, then the increment/decrement happens AFTER whatever happens before it (ie. assigning a val to a var). If the increment/decrement PRECEDES the var, then it happens FIRST. */
+      // Decrement                                                                so...
+      result = price--;                                                 /* result is assigned to val of price BEFORE price has been decremented, then price gets decremented */
+      console.log("result = price-- = " + result.toString());           /* result is still assigned to the pre-decrement value of price */
+      console.log("price = " + price.toString());                       /* logs out price as its decremented value */
+      result = --price;                                                 /* price is decremented, THEN the decremented val is assigned to result */
+      console.log("result = --price = " + result.toString());           /* logs out result as the decremented val of price from the above line */
     }
 
-    // Plus sign with Numbers and Strings
+    // Plus sign with Numbers and Strings                                         /* plus sign can be used for string concatenation*
     function plusSignSample() {
       let price = 200;
       let stringValue = "100";
       let result = 0;
 
-      console.log("price = " + price.toString());
+      console.log("price = " + price.toString());                                 
 
-      result = price + stringValue;
-      console.log("result (number + string) = " + result.toString());
+      result = price + stringValue;                                               /* when you put a plus sign between a number and a string, like on this line, JS will convert the number to a string and then concatenate the two strings */
+      console.log("result (number + string) = " + result.toString());             
 	  
-      result = price + (+stringValue);
+      result = price + (+stringValue);                                            /* putting a plus sign directly before a string will convert it to a number. so on this line, we aren't doing string concat; we are adding together 2 nums */
       console.log("result (number + (+stringValue)) = " + result.toString());
     }
 
-    // Assignment Operators
+    // Assignment Operators                                         /* (all the same as ruby) */
     function assignmentSample() {
       let price = 200;
 
@@ -105,7 +105,7 @@
       console.log("price %= 3 = " + price.toString());
     }
 
-    // Comparison Operators
+    // Comparison Operators                     /* again, basically all the same as ruby except for === and !==, which you already have notes on */
     function comparisonSample() {
       let price = 200;
       let result = 0;
@@ -178,3 +178,8 @@
 </body>
 
 </html>
+
+
+<!-- 
+
+ -->
