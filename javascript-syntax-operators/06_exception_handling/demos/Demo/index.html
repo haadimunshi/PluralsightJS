@@ -23,9 +23,9 @@
     function simpleTryCatch() {
       let result;
 
-      try {
+      try {                               /* "try the code on the next line. it might fail. if it does..." */
         result = x / 10;
-      } catch (error) {
+      } catch (error) {                   /*... "then here's what we want to have happen instead" */
         console.log(error.message);
       }
     }
@@ -41,7 +41,7 @@
       } catch (error) {
         console.log("In the 'Catch' block: " + error.message);
       }
-      finally {
+      finally {                                                 /* 'finally' is optional. can be used if we have something we want to do regardless of whether or not the try block fails */
         console.log("In the 'finally' block");
       }
     }
@@ -67,7 +67,7 @@
       try {
         attemptDivision();
       } catch (error) {
-        console.log(error.message + " - Error Type: " + error.name);
+        console.log(error.message + " - Error Type: " + error.name);            /* will log out the custom error message and error name that we created in the throw block in attemptDivision. Note that we also included the standard JS error message within the custom message on line 82, so that will get logged out as well */
       }
     }
 
